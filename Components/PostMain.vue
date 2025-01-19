@@ -39,10 +39,40 @@
                         src="/test.mp4" 
                     />
                     <img 
-                        class="absolute right-2 bottom-14" 
+                        class="absolute right-2 bottom-2" 
                         width="90" 
                         src="~/assets/images/tiktok-logo-white.png"
                     >
+                </div>
+
+                <div class="relative mr-[75px]">
+                    <div class="absolute bottom-0 pl-2">
+                        <!-- This is the like button -->
+                        <div class="pb-4 text-center">
+                            <button class="rounded-full bg-gray-200 p-2 cursor-pointer">
+                                <Icon 
+                                    name="mdi:heart" 
+                                    size="25" 
+                                    :color="isLiked ? '#F02C56' : ''"
+                                />
+                            </button>
+                            <span class="text-xs text-gray-800 font-semibold">{{ 44 }}</span>
+                        </div>
+                        <!-- The is the comment button -->
+                        <div class="pb-4 text-center">
+                            <div class="rounded-full bg-gray-200 p-2 cursor-pointer">
+                                <Icon name="bx:bxs-message-rounded-dots" size="25"/>
+                            </div>
+                            <span class="text-xs text-gray-800 font-semibold">43</span>
+                        </div>
+                        <!-- The is the share button -->
+                        <div class="text-center">
+                            <div class="rounded-full bg-gray-200 p-2 cursor-pointer">
+                                <Icon name="ri:share-forward-fill" size="25"/>
+                            </div>
+                            <span class="text-xs text-gray-800 font-semibold">55</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,6 +81,6 @@
 
 <script setup>
     let video = ref(null);
-
+    let isLiked = ref(false);
     onMounted(() => video.value.play());
 </script>
